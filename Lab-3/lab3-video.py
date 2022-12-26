@@ -3,7 +3,7 @@ import cv2
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
 
-video = cv2.VideoCapture('./assets/eddie-murphy.avi')
+video = cv2.VideoCapture('./assets/my-face.avi')
 while True:
     ret, img = video.read()
     if ret:
@@ -18,7 +18,7 @@ while True:
             for (ex, ey, ew, eh) in eyes:
                 cv2.rectangle(roi_color, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
             cv2.imshow('img', img)
-            k = cv2.waitKey(60) & 0xff
+            k = cv2.waitKey(30) & 0xff
             if k == 27:
                 break
             else:

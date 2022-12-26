@@ -54,11 +54,6 @@ cv2.imshow("Result BGR", resultBGR)
 cv2.imshow("Result HSV", resultHSV)
 cv2.imshow("Result YCB", resultYCB)
 cv2.imshow("Output LAB", resultLAB)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security

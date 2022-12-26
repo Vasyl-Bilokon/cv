@@ -62,13 +62,13 @@ for i, patch in enumerate(light_patches):
     ax = fig.add_subplot(3, len(light_patches), len(light_patches) * 1 + i + 1)
     ax.imshow(patch, cmap=plt.cm.gray,
             vmin=0, vmax=255)
-    ax.set_xlabel('Snow Land %d' % (i + 1))
+    ax.set_xlabel('Snow %d' % (i + 1))
 
 for i, patch in enumerate(dark_patches): 
     ax = fig.add_subplot(3, len(dark_patches), len(dark_patches) * 2 + i + 1)
     ax.imshow(patch, cmap=plt.cm.gray,
             vmin=0, vmax=255)
-    ax.set_xlabel('Green Grass %d' % (i + 1))
+    ax.set_xlabel('Grass %d' % (i + 1))
 
 fig.suptitle('Grey level co-occurrence matrix features', fontsize=14, y=1.05)
 plt.tight_layout()

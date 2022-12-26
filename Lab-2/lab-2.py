@@ -3,20 +3,20 @@ import cv2
 
 from skimage.feature import greycomatrix, greycoprops
 
-image = cv2.imread('./pictures/image11282022_500m.jpg')
+image = cv2.imread('./pictures/shinmoedake_amo_2018065_lrg.jpg')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 
 PATCH_SIZE = 20
 
-light_locations =[(1026, 388), (702, 1094), (1513, 316), (1918, 420)]
+light_locations = [(500, 500), (1500, 600), (4000, 4000), (2800, 1500)]
 light_patches = []
 
 for loc in light_locations:
     light_patches.append(image[loc[0]:loc[0] + PATCH_SIZE,
                          loc[1]:loc[1] + PATCH_SIZE])
 
-dark_locations = [(2500, 324), (2461, 634), (2666, 700), (3668, 700)]
+dark_locations = [(150, 2500), (3600, 400), (3800, 1550), (3600, 2200)]
 
 dark_patches = []
 for loc in dark_locations:
@@ -52,9 +52,9 @@ ax.axis('image')
 
 ax = fig.add_subplot(3, 2, 2)
 ax.plot(xs[:len(light_patches)], ys[:len(light_patches)], 'go',
-        label='Desert')
+        label='Snow')
 ax.plot(xs[len(dark_patches):], ys[len(dark_patches):], 'bo',
-        label='Water')
+        label='Grass')
 ax.set_xlabel('GLCM Dissimilarity')
 ax.set_ylabel('GLCM Correlation')
 
@@ -62,13 +62,13 @@ for i, patch in enumerate(light_patches):
     ax = fig.add_subplot(3, len(light_patches), len(light_patches) * 1 + i + 1)
     ax.imshow(patch, cmap=plt.cm.gray,
             vmin=0, vmax=255)
-    ax.set_xlabel('Desert %d' % (i + 1))
+    ax.set_xlabel('Snow Land %d' % (i + 1))
 
 for i, patch in enumerate(dark_patches): 
     ax = fig.add_subplot(3, len(dark_patches), len(dark_patches) * 2 + i + 1)
     ax.imshow(patch, cmap=plt.cm.gray,
             vmin=0, vmax=255)
-    ax.set_xlabel('Water %d' % (i + 1))
+    ax.set_xlabel('Green Grass %d' % (i + 1))
 
 fig.suptitle('Grey level co-occurrence matrix features', fontsize=14, y=1.05)
 plt.tight_layout()

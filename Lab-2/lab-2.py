@@ -9,14 +9,14 @@ image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 PATCH_SIZE = 20
 
-light_locations = [(500, 500), (1500, 600), (4000, 4000), (2800, 1500)]
+light_locations = [(365, 880), (100, 1120), (1100, 1100), (1250, 940)]
 light_patches = []
 
 for loc in light_locations:
     light_patches.append(image[loc[0]:loc[0] + PATCH_SIZE,
                          loc[1]:loc[1] + PATCH_SIZE])
 
-dark_locations = [(150, 2500), (3600, 400), (3800, 1550), (3600, 2200)]
+dark_locations = [(113, 272), (682, 809), (82, 256), (737, 769)]
 
 dark_patches = []
 for loc in dark_locations:

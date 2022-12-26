@@ -3,8 +3,8 @@ import cv2
 import numpy as np
 
 # read images for experiments
-bright = cv2.imread("./assets/IMG_1274.JPG")
-dark = cv2.imread("./assets/IMG_1275.JPG")
+bright = cv2.imread("./pictures/IMG_1274.JPG")
+dark = cv2.imread("./pictures/IMG_1275.JPG")
 
 brightLAB = cv2.cvtColor(bright, cv2.COLOR_BGR2LAB)
 darkLAB = cv2.cvtColor(dark, cv2.COLOR_BGR2LAB)

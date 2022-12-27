@@ -3,7 +3,7 @@ import cv2
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
 
-video = cv2.VideoCapture('./pictures/my-face.avi')
+video = cv2.VideoCapture('./pictures/my-video.avi')
 while True:
     ret, img = video.read()
     if ret:
